@@ -30,8 +30,13 @@ public class SpawnManager : MonoBehaviour
             Vector3 posToSpawn = new Vector3(Random.Range(-8f, 8f), 7, 0);
            GameObject newEnemy = Instantiate(_enemyPrefab, posToSpawn, Quaternion.identity);
             newEnemy.transform.parent = _enemyContainer.transform;
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(0.2f);
 
         }
+    }
+
+    public void onPlayerDeath()
+    {
+        _stopSpawning = true;
     }
 }

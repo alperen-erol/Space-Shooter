@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
     {
         float randomX = Random.Range(-8f, 8f);
         transform.position = new Vector3(Random.Range(-9f,9f), 7.5f);
+
+        
+
     }
 
     // Update is called once per frame
