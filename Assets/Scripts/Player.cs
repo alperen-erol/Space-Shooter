@@ -79,10 +79,21 @@ public class Player : MonoBehaviour
         StartCoroutine(TSCooldown());
     }
 
+    public void SpeedAcquired()
+    {
+        _speed = 10.0f;
+        StartCoroutine(SpeedCooldown());
+    }
+
     IEnumerator TSCooldown()
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive=false;
+    }
+    IEnumerator SpeedCooldown()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _speed = 5.0f;
     }
 
     public void Damage()

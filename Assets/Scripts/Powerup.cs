@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Powerup : MonoBehaviour
 {
     [SerializeField]
-    private float _speed=3;
+    private float _speed=3.0f;
+
+    
+    [SerializeField]
+    private int powerupID;
+    //0 for tripleshot
+    //1 for speed
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +37,22 @@ public class Powerup : MonoBehaviour
         if (collision.tag == "Player")
         {
             Player player = collision.transform.GetComponent<Player>();
-            player.TripleShotAcquired();
+            if (player != null) {
+
+                if (powerupID == 0)
+                {
+                    player.TripleShotAcquired();
+                }
+                else if (powerupID == 1)
+                {
+                    player.SpeedAcquired();
+                }
+                
+
+            }
+
             Destroy(this.gameObject);
+
         }
     }
 }
