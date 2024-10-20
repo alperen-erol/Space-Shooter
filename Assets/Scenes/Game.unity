@@ -659,8 +659,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1035374207444584193, guid: 66badb6e06c0f77409f21138e545e4c1, type: 3}
   _enemyContainer: {fileID: 1206745387}
-  _tripleShotPowerupPrefab: {fileID: 6010239770985469096, guid: 1cc267444e27bf04a8f0f296edbd5fb7, type: 3}
-  _stopSpawning: 0
+  powerups:
+  - {fileID: 6010239770985469096, guid: 1cc267444e27bf04a8f0f296edbd5fb7, type: 3}
+  - {fileID: 690444293191002751, guid: b9923629638bb3a43ae9ede7c472b7cd, type: 3}
+  - {fileID: 0}
 --- !u!4 &2050310145
 Transform:
   m_ObjectHideFlags: 0
